@@ -1,3 +1,4 @@
+# users array where username and password are stored
 users = [
     { username: "mashur", password: "password1"},
     { username: "jack", password: "password2"},
@@ -6,11 +7,7 @@ users = [
     { username: "heisenberg", password: "password5"}
 ]
 
-puts "Welcome to the authenticator".center(50, "-")
-puts
-puts "This program will take input from the user and compare password"
-puts "If password is correct, you will get back the user object"
-
+# authentication method to check and verify if username/password combination exists
 def auth_user(username, password, list_of_users)
     list_of_users.each do |user_record|
         if user_record[:username] == username && user_record[:password] == password
@@ -19,6 +16,13 @@ def auth_user(username, password, list_of_users)
     end
     "Credentials were not correct"
 end
+
+# program execution flow
+puts "Welcome to the authenticator".center(50, "-")
+puts
+puts "This program will take input from the user and compare password"
+puts "If password is correct, you will get back the user object"
+
 attempts = 1
 while attempts < 4
     print "Username: "
